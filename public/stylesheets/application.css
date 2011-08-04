@@ -111,8 +111,8 @@ padding-left:150px;
 #listUpdate {float:right; text-align:right;}
 
 .responseWrap {
-padding:20px;
-margin-bottom:20px;
+padding:10px;
+margin-bottom:10px;
 background-color:#efefef;
 overflow:auto;
 }
@@ -132,7 +132,8 @@ margin-right:10px;
 .responseWrap .responseScore.indifferent {background-position: -23px bottom;}
 .responseWrap .responseScore.sad {background-position: right bottom;}
 
-.responseWrap .responseUrl {
+.responseWrap .responseUrl,
+.responseWrap .sendToSupport {
 float:right;
 }
 
