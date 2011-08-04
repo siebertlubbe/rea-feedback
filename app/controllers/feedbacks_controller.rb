@@ -36,11 +36,15 @@ class FeedbacksController < ApplicationController
   end
   
   def index
-    @feedbacks = Feedback.find(:all, :limit => 5, :order => "id DESC") #, :conditions => ["id > ?", params[:id]])
+    if params[:since]
+      @feedbacks = Feedback.find(:all, :limit => 5, :conditions => ["id > ?", params[:since]], :order => "id DESC") 
+    else
+      @feedbacks = Feedback.find(:all, :limit => 5, :order => "id DESC")
+    end
     
     respond_to do |format|
       format.html
-      format.json { render :text => @feedbacks.to_json }
+      format.js { render :partial => 'index' }
     end
   end
 
