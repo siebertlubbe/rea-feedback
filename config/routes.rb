@@ -1,5 +1,7 @@
 Id::Application.routes.draw do
-  resources :feedbacks
+  scope "/admin" do
+    resources :feedbacks
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
