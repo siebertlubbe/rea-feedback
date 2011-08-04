@@ -1,0 +1,38 @@
+END-USER
+GET /services/feedback/$uid => JSON response { all info, status: 1 }
+
+POST /services/feedback/
+BODY:
+$uid
+$url
+$status
+JSON: { feedback_id: 123 }
+
+POST /services/feedback/$feedback_id
+BODY:
+$comment
+
+
+ADMINISTRATIVE
+GET /services/feedback/since/$feedback_id
+JSON (ordered): [
+ everything
+]
+
+#GET /services/comments/## default server-side limit
+##GET /services/comments/limit/$limit
+#GET /services/comments/$comment_id (low priority)
+#GET /services/comments/since/$timestamp (low priority)
+
+feedback
+========
+id (int)
+uid (varchar(32))
+url (varchar(255))
+timestamp (datetime)
+status (int/enum)
+comment (varchar,NULL)
+
+index id
+index id,timestamp
+index uid,timestamp
