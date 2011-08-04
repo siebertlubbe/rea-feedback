@@ -34,6 +34,9 @@ GEM
     erubis (2.6.6)
       abstract (>= 1.0.0)
     i18n (0.5.0)
+    jquery-rails (1.0.12)
+      railties (~> 3.0)
+      thor (~> 0.14)
     linecache (0.46)
       rbx-require-relative (> 0.0.4)
     mail (2.2.19)
@@ -81,6 +84,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  jquery-rails
   mysql2 (~> 0.2.6)
   rails (= 3.0.9)
   rake
