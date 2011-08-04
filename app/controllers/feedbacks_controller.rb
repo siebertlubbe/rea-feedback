@@ -9,23 +9,19 @@ class FeedbacksController < ApplicationController
   end
 
   def by_user_id
-    @feedback = Feedback.find_by_user_id(params[:user_id])
-    
-    respond_to do |format|
-      format.json { render :text => @feedback.to_json }
-    end
+    @feedback = Feedback.find(
+	:first,
+	:conditions => [ "user_id = :u", {:u => params[:user_id]} ],
+	:order => "created_at DESC"
+    )
+    render_json @feedback.to_json
   end
 
-  
   def create
-    @feedback = Feedback.create(params[:feedback])   
-    #respond_to do |format|
-    #  format.json { 
-     #   require 'ruby-debug'; debugger
-        render :text => @feedback.to_json #}
-    #end
+    @feedback = Feedback.create(params[:feedback])
+    render_json @feedback.to_json
   end
-  
+
   def update
     @feedback = Feedback.find(params[:id])
     @feedback.update_attributes(params[:feedback])
@@ -46,5 +42,22 @@ class FeedbacksController < ApplicationController
       format.html
       format.json { render :text => @feedbacks.to_json }
     end
+  end
+
+
+  def render_json(json, options={})
+    callback, variable = params[:callback], params[:variable]
+    response = begin
+      if callback && variable
+        "var #{variable} = #{json};\n#{callback}(#{variable});"
+      elsif variable
+        "var #{variable} = #{json};"
+      elsif callback
+        "#{callback}(#{json});"
+      else
+        json
+      end
+    end
+    render({:content_type => :js, :text => response}.merge(options))
   end
 end
