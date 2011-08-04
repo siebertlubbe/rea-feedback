@@ -111,3 +111,12 @@ $J(document).ready(function() {
   });
 });
 
+var App = {
+    Views: {},
+    Controllers: {},
+    init: function() {
+        new App.Controllers.Feedbacks();
+        Backbone.history.start();
+    }
+};
+

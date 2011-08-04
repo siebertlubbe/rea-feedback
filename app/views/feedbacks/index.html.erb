@@ -16,24 +16,25 @@
 		</form>
 		<div class="clearAll">&nbsp;</div>
 	</div>
-	
-	<% @feedbacks.each do |feedback| %>
-    <div class="responseWrap">
-      <div class="responseHeader">
-        <span class="responseUrl"><%= feedback.url %></span>
-        <span class="responseScore <%= feedback.emotion %>" title="<%= feedback.emotion %>">
-          <%= feedback.emotion.upcase %>
-        </span>
-        <span class="responseTrend up" title="treding up">up</span>
-        <h2 class="responseProduct">Product</h2>
-        <div class="clearAll">&nbsp;</div>
-      </div>
-      <div class="responseText">
-        <%= feedback.comment %>
-      </div>
-      <input onClick="alert('you just sent this to support')" class="pushToSupport" type="submit" value="Send To Support"/>
-    </div>
-	<% end %>
+	<div class="responses">
+	  <% @feedbacks.each do |feedback| %>
+	     <div class="responseWrap">
+	       <div class="responseHeader">
+	         <span class="responseUrl"><%= feedback.url %></span>
+	         <span class="responseScore <%= feedback.emotion %>" title="<%= feedback.emotion %>">
+	           <%= feedback.emotion.upcase %>
+	         </span>
+	         <span class="responseTrend <%= feedback.trend %>" title="treding <%= feedback.trend %>"><%= feedback.trend %></span>
+	         <h2 class="responseProduct">Product</h2>
+	         <div class="clearAll">&nbsp;</div>
+	       </div>
+	       <div class="responseText">
+	         <%= feedback.comment %>
+	       </div>
+	       <input onClick="alert('you just sent this to support')" class="pushToSupport" type="submit" value="Send To Support"/>
+	     </div>
+	  <% end %>
+	</div>
 	
 	<div class="pagination">
 		<a href="#" class="next20">See next 20 results</a>

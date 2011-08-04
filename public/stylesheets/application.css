@@ -139,14 +139,14 @@ float:right;
 .responseWrap .responseTrend {
 background-image:url(/images/up-stay-down.png);
 display:block;
-height:23px;
+height:22px;
 width:23px;
 float:left;
 text-indent:-9000px;
 margin-right:10px;
 }
 .responseWrap .responseTrend.up {background-position:left top;}
-.responseWrap .responseTrend.stay {background-position:left -30px;}
+.responseWrap .responseTrend.stay {background-position:left -25px;}
 .responseWrap .responseTrend.down {background-position:left bottom;}
 
 .responseWrap h2.responseProduct {margin:0;}

@@ -36,7 +36,7 @@ class FeedbacksController < ApplicationController
   end
   
   def index
-    @feedbacks = Feedback.find(:all, :limit => 5) #, :conditions => ["id > ?", params[:id]])
+    @feedbacks = Feedback.find(:all, :limit => 5, :order => "id DESC") #, :conditions => ["id > ?", params[:id]])
     
     respond_to do |format|
       format.html
