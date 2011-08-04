@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html >
+	<head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-16">
+	<style type="text/css">
+
+
+/* --------------- code for list view ----------------- */
+html {font-size:78%;}
+body {background-color:#efefef; font-family: Arial; color:#333; font-size:1em; text-align:center;}
+
+#wrapper {
+width: 980px; 
+margin-left: auto; 
+margin-right:auto; 
+text-align:left; 
+background:#fff url(nora_hero_small.jpg) no-repeat; 
+padding:20px;
+}
+#wrapper h1 {
+padding-bottom:30px;
+color:#666;
+font-size:3em;
+padding-left:150px;
+}
+.clearAll {display:block; clear:both;}
+#pageHeaderInfo #productFilter {float:right; line-height:20px;}
+
+.highlight {background-color:#33ff33;}
+
+#listUpdate {float:right; text-align:right;}
+
+.responseWrap {
+padding:20px;
+margin-bottom:20px;
+background-color:#efefef;
+overflow:auto;
+}
+
+.responseHeader {overflow:auto;}
+
+.responseWrap .responseScore {
+display:block;
+width:23px;
+height:23px;
+text-indent:-9000px;
+background-image: url(smileys.png);
+float:left;
+margin-right:10px;
+}
+.responseWrap .responseScore.happy {background-position: left bottom;}
+.responseWrap .responseScore.indifferent {background-position: -23px bottom;}
+.responseWrap .responseScore.sad {background-position: right bottom;}
+
+.responseWrap .responseUrl {
+float:right;
+}
+
+.responseWrap .responseTrend {
+background-image:url(up-stay-down.png);
+display:block;
+height:23px;
+width:23px;
+float:left;
+text-indent:-9000px;
+margin-right:10px;
+}
+.responseWrap .responseTrend.up {background-position:left top;}
+.responseWrap .responseTrend.stay {background-position:left -30px;}
+.responseWrap .responseTrend.down {background-position:left bottom;}
+
+.responseWrap h2.responseProduct {margin:0;}
+.responseWrap .pushToSupport {float:right; margin-top:10px;}
+
+.pagination .next20 {
+background-repeat:no-repeat;
+background-image: url(down-arrow.png);
+background-position: center bottom;
+height:70px;
+text-align:center;
+display:block;
+width:100%;
+text-decoration:none;
+font-weight:bold;
+color:#999;
+}
+
+#footer {
+width:980px;
+margin-left:auto;
+margin-right:auto;
+padding-top:10px;
+}
+
+#footer .rss {
+width:46px;
+height:46px;
+display:block;
+text-indent:-9000px;
+background: transparent url(rss-icon.png) no-repeat;
+float:right;
+}
+#footer .excell {
+margin-right:10px;
+width:45px;
+height:48px;
+display:block;
+text-indent:-9000px;
+background: transparent url(excell-icon.png) no-repeat;
+float:right;
+}
+#footer .attribution {
+float:left;
+color:#999;
+font-size:1.2em;
+}
+	</style>
+	
+	</head>
+	<body>
+	<div id="wrapper">
+		<div id="listUpdate">
+			<div class="waiting">&nbsp;</div>
+			<p id="updaterTimeStamp">Last updated [insert time]</p>
+		</div>
+		<h1>Want to know what the customer thinks? Look below.</h1>
+		<div id="pageHeaderInfo">
+			<form action="" id="productFilter">
+				<select name="feedback-filter">
+					<option value="All" disabled="disabled" selected="selected">Choose Filter</option>
+					<option value="All">All Products</option>
+					<option value="agentDesktop">Agent Desktop</option>
+					<option value="realestatecomau">realestate.com.au</option>
+					<option value="realcommercialcomau">realcommercial.com.au</option>
+				</select>
+			</form>
+			<div class="clearAll">&nbsp;</div>
+		</div>
+		
+		<div class="responseWrap">
+			<div class="responseHeader">
+				<span class="responseUrl">[insert url]</span>
+				<span class="responseScore happy" title="happy">Happy</span>
+				<span class="responseTrend up" title="treding up">up</span>
+				<h2 class="responseProduct">Product</h2>
+				<div class="clearAll">&nbsp;</div>
+			</div>
+			<div class="responseText">
+				[Loreum ipsum sit dor ametLoreum ipsum sit dor ametLoreum ipsum sit dor ametLoreum ipsum sit dor ametLoreum ipsum sit dor amet]
+			</div>
+			<input onClick="alert('you just sent this to support')" class="pushToSupport" type="submit" value="Send To Support"/>
+		</div>
+		
+		<div class="responseWrap">
+			<div class="responseHeader">
+				<span class="responseUrl">[insert url]</span>
+				<span class="responseScore happy">Happy</span>
+				<span class="responseTrend up">up</span>
+				<h2 class="responseProduct">Product</h2>
+			</div>
+			<div class="responseText">
+				Loreum ipsum sit dor ametLoreum ipsum sit dor ametLoreum ipsum sit dor ametLoreum ipsum sit dor ametLoreum <span class="highlight">please call me back regarding this</span>
+			</div>
+			<input disabled="disabled" class="pushToSupport" type="submit" value="sent to support" />
+		</div>
+		
+		<div class="pagination">
+			<a href="#" class="next20">See next 20 results</a>
+		</div>
+		
+	</div>
+	<div id="footer">
+		<p class="attribution">Innovation Day 4-5 August 2011 | by Aidan Green, Siebert Lubbe, Edmund Lam</p>
+		<a href="#" class="rss">RSS</a>
+		<a href="#" class="excell">Excell</a>
+	</div>
+		</body>
+	  </html>
