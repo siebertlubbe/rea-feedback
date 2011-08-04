@@ -1,6 +1,12 @@
 Id::Application.routes.draw do
+  
+  #match 'services/feedbacks:user_id' => 'feedbacks#show', :via => :get
   scope "/services" do
-    resources :feedbacks
+    resources :feedbacks do
+      collection do
+        get 'by_user_id'
+      end
+    end
   end
 
   # The priority is based upon order of creation:
