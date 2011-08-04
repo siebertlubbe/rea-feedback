@@ -9,6 +9,8 @@ gem 'rake'
 
 gem 'mysql2', '~> 0.2.6'
 
+gem 'ruby-debug'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
