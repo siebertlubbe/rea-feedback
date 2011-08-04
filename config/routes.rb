@@ -1,5 +1,5 @@
 Id::Application.routes.draw do
-  scope "/admin" do
+  scope "/services" do
     resources :feedbacks
   end
 
