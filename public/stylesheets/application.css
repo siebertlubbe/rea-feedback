@@ -1,3 +1,5 @@
+/* --------------- code for survey collection ----------------- */
+
 #surveyTool .actions .surveyButtonSend,
 #surveyTool .actions .surveyButtonCancel {
     -moz-background-clip:border;
@@ -81,4 +83,114 @@ margin-bottom:10px;
     display:block;
     float:right;
     clear:both;
+}
+
+/* --------------- code for list view ----------------- */
+html {font-size:78%;}
+body {background-color:#efefef; font-family: Arial; color:#333; font-size:1em; text-align:center;}
+
+#wrapper {
+width: 980px; 
+margin-left: auto; 
+margin-right:auto; 
+text-align:left; 
+background:#fff url(/images/nora_hero_small.jpg) no-repeat; 
+padding:20px;
+}
+#wrapper h1 {
+padding-bottom:30px;
+color:#666;
+font-size:3em;
+padding-left:150px;
+}
+.clearAll {display:block; clear:both;}
+#pageHeaderInfo #productFilter {float:right; line-height:20px;}
+
+.highlight {background-color:#33ff33;}
+
+#listUpdate {float:right; text-align:right;}
+
+.responseWrap {
+padding:20px;
+margin-bottom:20px;
+background-color:#efefef;
+overflow:auto;
+}
+
+.responseHeader {overflow:auto;}
+
+.responseWrap .responseScore {
+display:block;
+width:23px;
+height:23px;
+text-indent:-9000px;
+background-image: url(/images/smileys.png);
+float:left;
+margin-right:10px;
+}
+.responseWrap .responseScore.happy {background-position: left bottom;}
+.responseWrap .responseScore.indifferent {background-position: -23px bottom;}
+.responseWrap .responseScore.sad {background-position: right bottom;}
+
+.responseWrap .responseUrl {
+float:right;
+}
+
+.responseWrap .responseTrend {
+background-image:url(/images/up-stay-down.png);
+display:block;
+height:23px;
+width:23px;
+float:left;
+text-indent:-9000px;
+margin-right:10px;
+}
+.responseWrap .responseTrend.up {background-position:left top;}
+.responseWrap .responseTrend.stay {background-position:left -30px;}
+.responseWrap .responseTrend.down {background-position:left bottom;}
+
+.responseWrap h2.responseProduct {margin:0;}
+.responseWrap .pushToSupport {float:right; margin-top:10px;}
+
+.pagination .next20 {
+background-repeat:no-repeat;
+background-image: url(/images/down-arrow.png);
+background-position: center bottom;
+height:70px;
+text-align:center;
+display:block;
+width:100%;
+text-decoration:none;
+font-weight:bold;
+color:#999;
+}
+
+#footer {
+width:980px;
+margin-left:auto;
+margin-right:auto;
+padding-top:10px;
+}
+
+#footer .rss {
+width:46px;
+height:46px;
+display:block;
+text-indent:-9000px;
+background: transparent url(/images/rss-icon.png) no-repeat;
+float:right;
+}
+#footer .excell {
+margin-right:10px;
+width:45px;
+height:48px;
+display:block;
+text-indent:-9000px;
+background: transparent url(/images/excell-icon.png) no-repeat;
+float:right;
+}
+#footer .attribution {
+float:left;
+color:#999;
+font-size:1.2em;
 }
