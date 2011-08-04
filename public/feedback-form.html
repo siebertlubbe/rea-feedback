@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html >
+	<head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-16">
+	<style type="text/css">
+#surveyTool .actions .surveyButtonSend,
+#surveyTool .actions .surveyButtonCancel {
+-moz-background-clip:border;
+-moz-background-inline-policy:continuous;
+-moz-background-origin:padding;
+background:#C20014 url(http://s2.au.reastatic.net/rs/img/buttons/rea_search.png$$114.586-2) repeat scroll 50% -55px;
+border:medium none;
+color:#FFFFFF;
+cursor:pointer;
+float:left;
+font-size:16px;
+font-weight:bold;
+height:31px;
+letter-spacing:0.04em;
+margin:7px 0 0 0;
+padding-bottom:3px;
+padding-left:2px;
+width:85px;
+text-align:center;
+line-height:24px;
+text-decoration:none;
+}
+#surveyTool .actions .surveyButtonCancel {
+background-color:#efefef;
+color:#333;
+}
+
+#surveyTool {
+width:300px;
+}
+#surveyTool #surveyToolSmiles {
+width:90px;
+}
+#surveyTool #surveyToolSmiles a {
+display:block;
+width:23px;
+height:23px;
+text-indent:-9000px;
+background-image: url(smileys.png);
+float:left;
+margin-left:5px;
+}
+#surveyTool #surveyToolSmiles a.happy {background-position:top left;}
+#surveyTool #surveyToolSmiles a.happy:hover,
+#surveyTool #surveyToolSmiles.happy a.happy {background-position: bottom left;}
+
+#surveyTool #surveyToolSmiles a.indifferent {background-position: -23px top;}
+#surveyTool #surveyToolSmiles a.indifferent:hover,
+#surveyTool #surveyToolSmiles.indifferent a.indifferent {background-position: -23px bottom;}
+
+#surveyTool #surveyToolSmiles a.sad {background-position: top right;}
+#surveyTool #surveyToolSmiles a.sad:hover,
+#surveyTool #surveyToolSmiles.sad a.sad {background-position: bottom right;}
+
+#surveyTool .surveyToolFeedback {
+display:block;
+float:left;
+clear:both;
+}
+
+#surveyTool .surveyToolSuccess {
+display:block;
+float:left;
+clear:both;
+}
+
+	</style>
+	
+	</head>
+	<body>
+<div id="surveyTool">
+	<p>Overall, how are you feeling about Agent Desktop?</p>
+
+	<div id="surveyToolSmiles" class="happy">
+		<a title="Happy" class="happy" href="#">Happy</a>
+		<a title="Indifferent" class="indifferent" href="#">Indifferent</a>
+		<a title="Not Happy" class="sad" href="#">Sad</a>
+	</div>
+    
+	<div class="surveyToolFeedback" style="display:none">
+		<label for="feedback_comments">Would you like to send us some feedback?</label>
+		<textarea id="feedvacj_comments"></textarea>
+		<div class="actions">
+				<a class="surveyButtonSend" onclick="surveyTool.send('surveyTool', true); return false;" href="#">Send</a>
+				<a class="surveyButtonCancel" onclick="surveyTool.send('surveyTool', false); return false;" href="#">No thanks</a>
+		</div>
+	</div>
+	<div class="surveyToolSuccess" style="display:none;"><p>Thanks for your feedback!</p></div>
+</div>
+	  </body>
+	  </html>
