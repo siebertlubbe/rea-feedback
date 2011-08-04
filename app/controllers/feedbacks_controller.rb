@@ -9,7 +9,7 @@ class FeedbacksController < ApplicationController
   end
   
   def create
-    @feedback = Feedback.create(params)
+    @feedback = Feedback.create(params[:feedback])
     
     respond_to do |format|
       format.json { render :text => @feedback.to_json }
@@ -26,6 +26,7 @@ class FeedbacksController < ApplicationController
   end
   
   def new
+    @feedback = Feedback.new
   end
   
   def index
