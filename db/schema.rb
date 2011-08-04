@@ -13,14 +13,14 @@
 ActiveRecord::Schema.define(:version => 20110804014400) do
 
   create_table "feedbacks", :force => true do |t|
-    t.string   "user_id", :null => false
+    t.string   "user_id",    :null => false
     t.string   "url"
-    t.datetime "created", :null => false
+    t.datetime "created_at", :null => false
     t.integer  "status"
     t.string   "comment"
   end
 
-  add_index "feedbacks", ["id", "created"], :name => "index_id_created"
-  add_index "feedbacks", ["user_id", "created"], :name => "index_user_id_created"
+  add_index "feedbacks", ["id", "created_at"], :name => "index_id_created_at"
+  add_index "feedbacks", ["user_id", "created_at"], :name => "index_user_id_created_at"
 
 end
