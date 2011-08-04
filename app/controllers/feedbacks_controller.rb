@@ -18,11 +18,12 @@ class FeedbacksController < ApplicationController
 
   
   def create
-    @feedback = Feedback.create(params[:feedback])
-    
-    respond_to do |format|
-      format.json { render :text => @feedback.to_json }
-    end
+    @feedback = Feedback.create(params[:feedback])   
+    #respond_to do |format|
+    #  format.json { 
+     #   require 'ruby-debug'; debugger
+        render :text => @feedback.to_json #}
+    #end
   end
   
   def update
