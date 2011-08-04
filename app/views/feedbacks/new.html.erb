@@ -24,3 +24,25 @@
 <% end %>
  
 <%= link_to 'Back', feedbacks_path %>
+
+
+<div id="surveyTool">
+	<p>Overall, how are you feeling about realestate.com.au?</p>
+
+	<div id="surveyToolSmiles" class="happy">
+		<a title="Happy" class="happy" href="#">Happy</a>
+		<a title="Indifferent" class="indifferent" href="#">Indifferent</a>
+		<a title="Not Happy" class="sad" href="#">Sad</a>
+	</div>
+	<div style="clear:both;"></div>
+
+	<div class="surveyToolFeedback" style="display:none">
+		<label for="feedback_comments">Would you like to send us some feedback?</label>
+		<textarea id="feedback_comments"></textarea>
+		<div class="actions">
+				<a class="surveyButtonSend" href="#">Send</a>
+				<a class="surveyButtonCancel" href="#">No thanks</a>
+		</div>
+	</div>
+	<div class="surveyToolSuccess" style="display:none;"><p>Thanks for your feedback!</p></div>
+</div>

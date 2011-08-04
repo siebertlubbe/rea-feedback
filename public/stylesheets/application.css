@@ -1,0 +1,84 @@
+#surveyTool .actions .surveyButtonSend,
+#surveyTool .actions .surveyButtonCancel {
+    -moz-background-clip:border;
+    -moz-background-inline-policy:continuous;
+    -moz-background-origin:padding;
+    background:#C20014 url(http://s2.au.reastatic.net/rs/img/buttons/rea_search.png$$114.586-2) repeat scroll 50% -55px;
+    border:medium none;
+    color:#FFFFFF;
+    cursor:pointer;
+    float:left;
+    font-size:14px;
+    font-weight:bold;
+    height:31px;
+    letter-spacing:0.04em;
+    margin:7px 0 0 0;
+    padding-bottom:3px;
+    padding-left:2px;
+    width:85px;
+    text-align:center;
+    line-height:30px;
+    text-decoration:none;
+}
+#surveyTool .actions .surveyButtonCancel {
+    background-color:#efefef;
+    color:#333;
+}
+
+#surveyTool {
+    margin-left: auto;
+    margin-right: auto;
+    width: 980px;
+    text-align:center;
+    padding-bottom:30px;
+    padding-top:20px;
+}
+#surveyTool p{
+    text-align:right;
+}
+#surveyTool #surveyToolSmiles {
+    width: 90px;
+    float: right;
+}
+
+#surveyTool #surveyToolSmiles {
+    width: 90px;
+margin-bottom:10px;	
+}
+#surveyTool #surveyToolSmiles a {
+    display:block;
+    width:23px;
+    height:23px;
+    text-indent:-9000px;
+    background-image: url(/images/smileys.png);
+    float:left;
+    margin-left:5px;
+}
+#surveyTool #surveyToolSmiles a.happy {background-position:top left;}
+#surveyTool #surveyToolSmiles a.happy:hover,
+#surveyTool #surveyToolSmiles.happy a.happy {background-position: bottom left;}
+
+#surveyTool #surveyToolSmiles a.indifferent {background-position: -23px top;}
+#surveyTool #surveyToolSmiles a.indifferent:hover,
+#surveyTool #surveyToolSmiles.indifferent a.indifferent {background-position: -23px bottom;}
+
+#surveyTool #surveyToolSmiles a.sad {background-position: top right;}
+#surveyTool #surveyToolSmiles a.sad:hover,
+#surveyTool #surveyToolSmiles.sad a.sad {background-position: bottom right;}
+
+#surveyTool .surveyToolFeedback {
+    display:block;
+    float:right;
+    clear:both;
+    text-align:right;
+    width:300px;
+}
+#surveyTool .actions {
+    float:right;
+}
+
+#surveyTool .surveyToolSuccess {
+    display:block;
+    float:right;
+    clear:both;
+}

@@ -1,6 +1,7 @@
 END-USER
 GET /services/feedback/$uid => JSON response { all info, status: 1 }
 
+== creation
 POST /services/feedback/
 BODY:
 $uid
@@ -8,6 +9,7 @@ $url
 $status
 JSON: { feedback_id: 123 }
 
+== update
 POST /services/feedback/$feedback_id
 BODY:
 $comment
