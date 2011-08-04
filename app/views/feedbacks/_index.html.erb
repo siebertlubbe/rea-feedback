@@ -17,24 +17,8 @@
 <% end %>
 
 <script type="text/javascript">
-  var newFeedbacks = {}
+  var numberOfFeedbacks = <%= @feedbacks.size %>
+  
+  var t = setTimeout("getFeedbacks()", 5000);
 
-  function getFeedbacks(since)
-  {
-    $J.ajax({
-      method: 'get',
-      url : 'http://127.0.0.1:3000/services/feedbacks',
-      data: {
-        since: since,
-        format: 'js',
-      },
-      dataType : 'text',
-      success: function (data) { 
-        $J('.responses').html(''); 
-        $J('.responses').prepend(data); 
-      }
-   });
-  }
-
-  setTimeout("getFeedbacks(0)", 5000);
 </script>

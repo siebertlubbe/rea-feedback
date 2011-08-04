@@ -34,3 +34,29 @@
 <div id="notice"></div>
 <div id="app"></div>
 
+<script type="text/javascript">
+
+  function getFeedbacks() {
+    $J.ajax({
+      method: 'get',
+      url : 'http://127.0.0.1:3000/services/feedbacks',
+      data: {
+        size: numberOfFeedbacks,
+        format: 'js',
+      },
+      dataType : 'text',
+      success: function (data) { 
+        $J('.responses').html(''); 
+        $J('.responses').prepend(data); 
+      }
+   });
+  }
+  
+  $J('.pagination a.next20').click(function (ev) {
+    numberOfFeedbacks += 5;
+    clearTimeout(t);
+    getFeedbacks();
+    return false;
+  });
+
+</script>

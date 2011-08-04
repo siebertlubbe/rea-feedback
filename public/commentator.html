@@ -1,0 +1,176 @@
+<script src="/javascripts/jquery.js" type="text/javascript"></script>
+<script src="/javascripts/application.js" type="text/javascript"></script>
+
+<script>
+
+function randomSentence() {
+var sentence = ''
+
+function textContructor() {
+};
+
+text = new textContructor();
+number = 0;
+
+// textArray
+text[number++] = "And so, the"
+text[number++] = "A"
+text[number++] = "Nobody knows why a"
+text[number++] = "Almost daily, a"
+text[number++] = "Sometimes, the"
+text[number++] = "However, this particular"
+text[number++] = "A"
+text[number++] = "The"
+text[number++] = "Only one"
+
+increment = Math.floor(Math.random() * number);
+
+sentence += (text[increment] + " ");
+
+
+function textContructor() {
+};
+
+text = new textContructor();
+number = 0;
+
+// textArray
+text[number++] = "cat"
+text[number++] = "evil potato"
+text[number++] = "elephant"
+text[number++] = "monkey"
+text[number++] = "robot"
+text[number++] = "ninja"
+text[number++] = "nerd"
+text[number++] = "zombie"
+text[number++] = "teacher"
+text[number++] = "monster"
+text[number++] = "butler"
+text[number++] = "alien"
+text[number++] = "fox"
+text[number++] = "demon"
+text[number++] = "box"
+text[number++] = "hand"
+
+increment = Math.floor(Math.random() * number);
+
+sentence += (text[increment] + " ");
+
+function textContructor() {
+};
+
+text = new textContructor();
+number = 0;
+
+// textArray
+text[number++] = "regularly"
+text[number++] = "angrily"
+text[number++] = "nervously"
+text[number++] = "quickly"
+text[number++] = "politely"
+text[number++] = "quietly"
+text[number++] = "dramatically"
+text[number++] = " "
+
+increment = Math.floor(Math.random() * number);
+
+sentence += (text[increment] + " ");
+
+function textContructor() {
+};
+
+text = new textContructor();
+number = 0;
+
+// textArray
+text[number++] = "destroyed a"
+text[number++] = "sat on the"
+text[number++] = "painted a"
+text[number++] = "captured the"
+text[number++] = "wrote about a"
+text[number++] = "kicked the"
+text[number++] = "screamed at a"
+text[number++] = "spat on the"
+text[number++] = "cleaned a"
+text[number++] = "laughed at the"
+text[number++] = "ate the"
+
+increment = Math.floor(Math.random() * number);
+
+sentence += (text[increment] + " ");
+
+function textContructor() {
+};
+
+text = new textContructor();
+number = 0;
+
+// textArray
+text[number++] = "green"
+text[number++] = "deadly"
+text[number++] = "flaming"
+text[number++] = "grumpy"
+text[number++] = "dancing"
+text[number++] = "electronic"
+text[number++] = "royal"
+text[number++] = "screaming"
+text[number++] = "insane"
+text[number++] = "secret"
+text[number++] = "confusing"
+text[number++] = "cloned"
+text[number++] = "original"
+
+increment = Math.floor(Math.random() * number);
+
+sentence += (text[increment] + " ");
+
+function textContructor() {
+};
+
+text = new textContructor();
+number = 0;
+
+// textArray
+text[number++] = "cake"
+text[number++] = "candle"
+text[number++] = "hair"
+text[number++] = "police car"
+text[number++] = "arm"
+text[number++] = "gardener"
+text[number++] = "pile of biscuits"
+text[number++] = "dead body"
+text[number++] = "printer"
+text[number++] = "chair"
+text[number++] = "book"
+text[number++] = "paper"
+text[number++] = "mirror"
+text[number++] = "balloon"
+text[number++] = "shampoo bottle"
+text[number++] = "coffin"
+
+increment = Math.floor(Math.random() * number);
+
+sentence += (text[increment] + " ");
+
+return sentence
+}
+
+function randomName() {
+  names = ['Peter', 'James', 'Wilco', 'Gary', 'William', 'Anthony', 'Phillip'];
+  return names[Math.floor(Math.random() * names.length)];
+}
+
+function postStatusAndCommend() {
+  user_id = randomName()
+  status = Math.floor(Math.random() * 3);
+  url = 'url'
+  comment = 'my comment'
+  post_status(user_id, status, url);
+  setTimeout("post_comment(feedbackObj.feedback.id, randomSentence())", 1000);
+}
+
+setInterval("postStatusAndCommend()", 3000)
+
+</script>
+
+<h3>Randomly generating and posting statuses and comments ... once every 4 seconds</h3>
