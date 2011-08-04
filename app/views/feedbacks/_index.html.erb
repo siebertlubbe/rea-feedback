@@ -1,6 +1,7 @@
 <% @feedbacks.each do |feedback| %>
    <div class="responseWrap">
      <div class="responseHeader">
+       <span class="sendToSupport"><input disabled="disabled" class="pushToSupport" type="submit" value="sent to support" /></span>
        <span class="responseUrl"><%= feedback.url %></span>
        <span class="responseScore <%= feedback.emotion %>" title="<%= feedback.emotion %>">
          <%= feedback.emotion.upcase %>
@@ -11,6 +12,7 @@
      </div>
      <div class="responseText">
        <%= feedback.comment %>
+       <span class="responseTime"><%= feedback.created_at.strftime('%Y-%m-%d %H:%M:%S') %></span>
      </div>
      
    </div>
@@ -19,6 +21,6 @@
 <script type="text/javascript">
   var numberOfFeedbacks = <%= @feedbacks.size %>
   
-  var t = setTimeout("getFeedbacks()", 5000);
+  //var t = setTimeout("getFeedbacks()", 5000);
 
 </script>
