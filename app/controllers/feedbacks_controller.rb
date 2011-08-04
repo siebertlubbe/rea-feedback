@@ -27,7 +27,7 @@ class FeedbacksController < ApplicationController
   
   def update
     @feedback = Feedback.find(params[:id])
-    @feedback.update_attributes(params)
+    @feedback.update_attributes(params[:feedback])
     
     respond_to do |format|
       format.json { render :text => @feedback.to_json }
