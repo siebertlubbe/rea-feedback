@@ -27,4 +27,12 @@ class FeedbacksController < ApplicationController
   
   def new
   end
+  
+  def index
+    @feedbacks = Feedback.find(:all, :conditions => ["id > ?", params[:id])
+    
+    respond_to do |format|
+      format.json { render :text => @feedbacks.to_json }
+    end
+  end
 end
