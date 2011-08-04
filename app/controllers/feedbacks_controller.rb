@@ -1,12 +1,21 @@
 class FeedbacksController < ApplicationController
   
   def show
-    @feedback = Feedback.find_by_uid(params[:uid])
+    @feedback = Feedback.find_by_user_id(params[:id])
     
     respond_to do |format|
       format.json { render :text => @feedback.to_json }
     end
   end
+
+  def by_user_id
+    @feedback = Feedback.find_by_user_id(params[:user_id])
+    
+    respond_to do |format|
+      format.json { render :text => @feedback.to_json }
+    end
+  end
+
   
   def create
     @feedback = Feedback.create(params[:feedback])
