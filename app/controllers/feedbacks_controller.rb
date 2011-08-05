@@ -63,4 +63,28 @@ class FeedbacksController < ApplicationController
     end
     render({:content_type => :js, :text => response}.merge(options))
   end
+  
+  def stats
+    time = Time.now
+    happy_feedbacks = Feedback.find(:all, :conditions => ['created_at > ? and status = ?', time - 1.hour, 0])
+    indifferent_feedbacks = Feedback.find(:all, :conditions => ['created_at > ? and status = ?', time - 1.hour, 1])
+    sad_feedbacks = Feedback.find(:all, :conditions => ['created_at > ? and status = ?', time - 1.hour, 2])
+    
+    @grouped_happy_feedbacks = group_feedbacks(happy_feedbacks)
+    @grouped_indifferent_feedbacks = group_feedbacks(indifferent_feedbacks)
+    @grouper_sad_feedbacks = group_feedbacks(sad_feedbacks)
+  end
+  
+  private 
+  
+  def group_feedbacks(feedbacks)
+    grouped_feedbacks = []
+    feedbacks.each do |feedback|
+      minute = feedback.created_at.min
+      grouped_feedbacks[minute] = [minute, 0] unless grouped_feedbacks[minute]
+      grouped_feedbacks[minute][1] = grouped_feedbacks[minute][1] + 1
+    end
+    return grouped_feedbacks
+  end
+  
 end

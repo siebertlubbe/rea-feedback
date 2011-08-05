@@ -1,17 +1,13 @@
 <div id="wrapper">
-	<div id="listUpdate">
-		<div class="waiting">&nbsp;</div>
-		<p id="updaterTimeStamp">Last updated [insert time]</p>
-	</div>
 	<h1>Want to know what the customer thinks? Look below.</h1>
 	<div id="pageHeaderInfo">
 		<form action="" id="productFilter">
 			<select name="feedback-filter">
 				<option value="All" disabled="disabled" selected="selected">Choose Filter</option>
 				<option value="All">All Products</option>
-				<option value="agentDesktop">Agent Desktop</option>
-				<option value="realestatecomau">realestate.com.au</option>
-				<option value="realcommercialcomau">realcommercial.com.au</option>
+				<option value="agentdesktop.realestate.com.au">agentdesktop.realestate.com.au</option>
+				<option value="realestate.com.au">realestate.com.au</option>
+				<option value="realcommercial.com.au">realcommercial.com.au</option>
 			</select>
 		</form>
 		<div class="clearAll">&nbsp;</div>
@@ -36,7 +32,9 @@
 
 <script type="text/javascript">
 
-  function getFeedbacks() {
+  var filter = {};
+
+  function getFeedbacks(filter) {
     $J.ajax({
       method: 'get',
       url : 'http://127.0.0.1:3000/services/feedbacks',
@@ -55,8 +53,12 @@
   $J('.pagination a.next20').click(function (ev) {
     numberOfFeedbacks += 5;
     clearTimeout(t);
-    getFeedbacks();
+    getFeedbacks(filter);
     return false;
+  });
+  
+  $J('#productFilter select').change(function() {
+    alert(123);
   });
 
 </script>

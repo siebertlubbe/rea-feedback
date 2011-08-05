@@ -7,7 +7,7 @@
          <%= feedback.emotion.upcase %>
        </span>
        <span class="responseTrend <%= feedback.trend %>" title="treding <%= feedback.trend %>"><%= feedback.trend %></span>
-       <h2 class="responseProduct">Product</h2>
+       <h2 class="responseProduct"><%= feedback.url.split('/').first %></h2>
        <div class="clearAll">&nbsp;</div>
      </div>
      <div class="responseText">
@@ -21,6 +21,6 @@
 <script type="text/javascript">
   var numberOfFeedbacks = <%= @feedbacks.size %>
   
-  var t = setTimeout("getFeedbacks()", 5000);
+  var t = setTimeout("getFeedbacks(filter)", 3500);
 
 </script>

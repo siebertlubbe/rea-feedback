@@ -7,6 +7,7 @@ Id::Application.routes.draw do
     resources :feedbacks do
       collection do
         get 'by_user_id'
+        get 'stats'
       end
     end
   end
