@@ -1,13 +1,52 @@
-<div id="placeholder" style="width:600px;height:300px;"></div>
+<div id="wrapper">
+  <div id="listUpdate">
+    <%= link_to 'All feedback', feedbacks_path %>
+	</div>
+	<h1>Want to know what the customer thinks? Look below.</h1>
+	<div id="pageHeaderInfo">
+		<div class="clearAll">&nbsp;</div>
+	</div>
+	
+	<div id="placeholder" style="width:800px;height:200px;margin-left: auto;margin-right: auto;"></div>
+  <p style="text-align: center;">All comments from the last 60 minutes</p>
+	
+</div>
+<div id="footer">
+	<p class="attribution">Innovation Day 4-5 August 2011 | by Aidan Green, Siebert Lubbe, Edmund Lam</p>
+	<a href="#" class="rss">RSS</a>
+	<a href="#" class="excell">Excell</a>
+</div>
 
 
 <script type="text/javascript">
 $J(function () {
     
-    var d1 = <%= @grouped_happy_feedbacks.inspect.gsub(/nil/, 'null') %>
-    var d2 = <%= @grouped_indifferent_feedbacks.inspect.gsub(/nil/, 'null') %>
-    var d3 = <%= @grouper_sad_feedbacks.inspect.gsub(/nil/, 'null') %>
+    var d1 = {
+      label: "Happy",
+      data: <%= @grouped_happy_feedbacks.inspect.gsub(/nil/, 'null') %>,
+      color: "green"
+    }
+    var d2 = {
+      label: "Indifferent",
+      data: <%= @grouped_indifferent_feedbacks.inspect.gsub(/nil/, 'null') %>,
+      color: "blue"
+    }
+    var d3 = {
+      label: "Unhappy",
+      data: <%= @grouper_sad_feedbacks.inspect.gsub(/nil/, 'null') %>,
+      color: "red"
+    }
     
-    $J.plot($J("#placeholder"), [ d1, d2, d3 ]);
+    var options = {
+        series: {
+          lines: { show: true }
+        },
+        xaxis: {
+          show: false,
+          label: "The last 60 minutes"
+        }
+      };
+    
+    $J.plot($J("#placeholder"), [ d1, d2, d3 ], options);
 });
 </script>

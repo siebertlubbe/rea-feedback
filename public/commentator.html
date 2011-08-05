@@ -153,12 +153,12 @@ increment = Math.floor(Math.random() * number);
 sentence += (text[increment] + " ");
 
 return sentence
-}
+};
 
 function randomName() {
   names = ['Peter', 'James', 'Wilco', 'Gary', 'William', 'Anthony', 'Phillip'];
   return names[Math.floor(Math.random() * names.length)];
-}
+};
 
 function randomUrl() {
   url = ''
@@ -192,18 +192,18 @@ function randomUrl() {
   url += '/' + pathsB[Math.floor(Math.random() * pathsB.length)]
   
   return url
-}
+};
 
 function postStatusAndCommend() {
-  user_id = randomName()
-  status = Math.floor(Math.random() * 3);
-  url = randomUrl()
-  comment = 'my comment'
+  status_weighting = ['0','0', '0', '0', '0', '0', '1', '1', '2', '2', '2', '2'];
+  user_id = randomName();
+  status = status_weighting[Math.floor(Math.random() * status_weighting.length)];
+  url = randomUrl();
   post_status(user_id, status, url);
   setTimeout("post_comment(feedbackObj.feedback.id, randomSentence())", 1000);
-}
+};
 
-setInterval("postStatusAndCommend()", 3000)
+setInterval("postStatusAndCommend()", 3000);
 
 </script>
 

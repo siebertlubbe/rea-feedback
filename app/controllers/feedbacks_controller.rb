@@ -79,10 +79,20 @@ class FeedbacksController < ApplicationController
   
   def group_feedbacks(feedbacks)
     grouped_feedbacks = []
+    
+    current_minute = Time.now.min
+    minute_offset = 60 - current_minute    
+    
+    for i in 0..59 do
+      grouped_feedbacks[i] = [i, 0]
+    end
+    
     feedbacks.each do |feedback|
       minute = feedback.created_at.min
-      grouped_feedbacks[minute] = [minute, 0] unless grouped_feedbacks[minute]
-      grouped_feedbacks[minute][1] = grouped_feedbacks[minute][1] + 1
+      
+      position = (minute - current_minute - 1 + 60) % 60
+      
+      grouped_feedbacks[position][1] = grouped_feedbacks[position][1] + 1
     end
     return grouped_feedbacks
   end

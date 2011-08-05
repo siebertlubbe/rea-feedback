@@ -1,4 +1,7 @@
 <div id="wrapper">
+  <div id="listUpdate">
+    <%= link_to 'Graphs', stats_feedbacks_path %>
+	</div>
 	<h1>Want to know what the customer thinks? Look below.</h1>
 	<div id="pageHeaderInfo">
 		<form action="" id="productFilter">
@@ -7,7 +10,6 @@
 				<option value="All">All Products</option>
 				<option value="agentdesktop.realestate.com.au">agentdesktop.realestate.com.au</option>
 				<option value="realestate.com.au">realestate.com.au</option>
-				<option value="realcommercial.com.au">realcommercial.com.au</option>
 			</select>
 		</form>
 		<div class="clearAll">&nbsp;</div>
@@ -58,7 +60,7 @@
   });
   
   $J('#productFilter select').change(function() {
-    alert(123);
+    //alert(123);
   });
 
 </script>
