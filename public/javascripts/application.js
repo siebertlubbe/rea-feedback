@@ -31,7 +31,7 @@ function setStatus(data) {
 function get_status() {
   $J.ajax({
     type: 'GET',
-    url: 'http://127.0.0.1:3000/services/feedbacks/by_user_id',
+    url: 'http://www.realestate.com.au.localhost:3000/services/feedbacks/by_user_id',
     dataType: "jsonp",
     data: {
       user_id: user_id
@@ -43,7 +43,7 @@ function get_status() {
 function post_status(user_id, status, url) {
   $J.ajax({
     type: 'GET',
-    url: 'http://127.0.0.1:3000/services/feedbacks/status',
+    url: 'http://www.realestate.com.au.localhost:3000/services/feedbacks/status',
     dataType: "jsonp",
     data: {
       feedback: {
@@ -60,7 +60,7 @@ function post_status(user_id, status, url) {
 function post_comment(feedback_id, comment) {
   $J.ajax({
     type: 'GET',
-    url: 'http://127.0.0.1:3000/services/feedbacks/comments/' + feedback_id,
+    url: 'http://www.realestate.com.au.localhost:3000/services/feedbacks/comments/' + feedback_id,
     data: { 
       feedback: { 
         comment: comment
