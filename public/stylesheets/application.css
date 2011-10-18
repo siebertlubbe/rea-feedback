@@ -34,6 +34,7 @@
     text-align:center;
     padding-bottom:30px;
     padding-top:20px;
+    overflow: auto;
 }
 #surveyTool p{
     text-align:right;
@@ -90,7 +91,7 @@ html {font-size:78%;}
 body {background-color:#efefef; font-family: Arial; color:#333; font-size:1em; text-align:center;}
 
 #wrapper {
-width: 980px; 
+width: 95%; 
 margin-left: auto; 
 margin-right:auto; 
 text-align:left; 
@@ -177,7 +178,7 @@ color:#999;
 }
 
 #footer {
-width:980px;
+width:95%;
 margin-left:auto;
 margin-right:auto;
 padding-top:10px;

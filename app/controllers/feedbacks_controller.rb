@@ -66,9 +66,9 @@ class FeedbacksController < ApplicationController
   
   def stats
     time = Time.now
-    happy_feedbacks = Feedback.find(:all, :conditions => ['created_at > ? and status = ?', time - 1.hour, 0])
-    indifferent_feedbacks = Feedback.find(:all, :conditions => ['created_at > ? and status = ?', time - 1.hour, 1])
-    sad_feedbacks = Feedback.find(:all, :conditions => ['created_at > ? and status = ?', time - 1.hour, 2])
+    happy_feedbacks = Feedback.find(:all, :conditions => ['created_at > ? and status = ?', time - 1.hour, 1])
+    indifferent_feedbacks = Feedback.find(:all, :conditions => ['created_at > ? and status = ?', time - 1.hour, 2])
+    sad_feedbacks = Feedback.find(:all, :conditions => ['created_at > ? and status = ?', time - 1.hour, 3])
     
     @grouped_happy_feedbacks = group_feedbacks(happy_feedbacks)
     @grouped_indifferent_feedbacks = group_feedbacks(indifferent_feedbacks)

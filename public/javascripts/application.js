@@ -36,7 +36,8 @@ function get_status() {
     data: {
       user_id: user_id
     },
-    jsonpCallback: "setStatus"
+    jsonp: 'callback',
+    jsonpCallback: "setStatus",
   });
 }
 

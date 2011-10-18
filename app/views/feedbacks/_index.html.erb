@@ -7,7 +7,7 @@
          <%= feedback.emotion.upcase %>
        </span>
        <span class="responseTrend <%= feedback.trend %>" title="treding <%= feedback.trend %>"><%= feedback.trend %></span>
-       <h2 class="responseProduct"><%= feedback.url.split('/').first %></h2>
+       <h2 class="responseProduct"><%= feedback.url.gsub(/http:\/\//, '').split('/').first %></h2>
        <div class="clearAll">&nbsp;</div>
      </div>
      <div class="responseText">

@@ -2,11 +2,11 @@ class Feedback < ActiveRecord::Base
   
   def emotion
     case status
-    when 0
-      "happy"
     when 1
-      "indifferent"
+      "happy"
     when 2
+      "indifferent"
+    when 3
       "sad"
     else
       "undefined"
